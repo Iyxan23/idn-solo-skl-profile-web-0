@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'DM Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+
+:root {
+    --black: rgb(55, 56, 62);
+}
+
+/* Header */
+header {
+    display: flex;
+    height: 30vmin;
+    width: inherit;
+    box-sizing: border-box;
+    padding: 5vmin;
+    gap: 10vmin;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background-color: var(--black);
+    color: white;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    transition: all 500ms ease-in-out;
+}
+
+header.collapsed {
+    height: 4.5rem;
+    gap: 1rem;
+    padding: 1.5rem;
+
+    justify-content: center;
+}
+
+header.collapsed img#me {
+    position: absolute;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+}
+
+header.collapsed .details {
+    /* justify-content: center; */
+    align-items: center;
+}
+
+header.collapsed h1 {
+    font-size: 1.25em;
+    margin: 0;
+}
+
+header.collapsed p {
+    font-size: 0.75em;
+    margin: 0;
+    margin-top: .5rem;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+header img#me {
+    height: 100%;
+    border-radius: 100%;
+
+    transition: all 500ms;
+}
+
+header .sosmed {
+    filter: invert(1);
+
+    position: fixed;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: .75rem;
+
+    top: 1.5rem;
+    right: 1.5rem;
+
+    z-index: 10;
+}
+
+header .sosmed > * {
+    cursor: pointer;
+}
+
+header .details {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Sections */
+section {
+    max-width: 65vw;
+    width: 100%;
+}
+
+.popping-cards {
+    width: 100vw;
+    transform: translateX(-17.5vw);
+
+    display: flex;
+    justify-content: space-around;
+
+    margin: 3rem 0;
+}
+
+.popping-cards .card {
+    width: 30vw;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-color: white;
+    transition: background-color 500ms ease;
+    user-select: none;
+}
+
+.popping-cards .card:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+.popping-cards .card h3 {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 905px) {
+    section {
+        max-width: 80vw;
+    }
+
+    .popping-cards {
+        width: unset;
+        flex-direction: column;
+        box-sizing: border-box;
+        justify-content: center;
+        transform: none;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .popping-cards .card {
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+/* Skills */
+#skills-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#skills-items .skill {
+    padding: 1rem;
+    /* width: 5rem; */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 20%;
+
+    transition: background-color 200ms;
+}
+
+#skills-items .skill:hover {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+#skills-items .skill figcaption {
+    margin-top: 1rem;
+}
+
+#skills-items .skill img {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 5rem;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: var(--black);
+    padding: 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    user-select: none;
+    margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 425px) {
+    header .sosmed {
+        gap: .5rem;
+    }
+}
